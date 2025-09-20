@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Famous | About</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">World Famous 🎶</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section class="about">
+    <h1>About Me</h1>
+    <div class="about-container">
+      <img src="images/profile.jpg" alt="World Famous">
+      <div class="about-text">
+        <p>
+          Hi, I’m <strong>World Famous</strong>, a passionate musician, songwriter, and performer. 
+          My journey in music started with a deep love for storytelling through sound. 
+          From small shows to bigger stages, my mission has always been the same: 
+          to create music that connects, inspires, and spreads good vibes. 
+        </p>
+        <p>
+          With each track, I bring my experiences, energy, and culture into my art. 
+          Stay tuned for more projects and performances, as the best is yet to come.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 World Famous. All rights reserved.</p>
+  </footer>
+
+  <!-- Sticky Player -->
+  <div class="music-player">
+    <div class="player-left">
+      <img src="images/cover1.jpg" alt="Cover" id="player-cover">
+      <div>
+        <h4 id="player-title">Track Title</h4>
+        <p id="player-artist">Artist</p>
+      </div>
+    </div>
+    <div class="player-controls">
+      <button onclick="prevTrack()">⏮</button>
+      <button onclick="togglePlay()" id="play-btn">▶️</button>
+      <button onclick="nextTrack()">⏭</button>
+    </div>
+    <div class="player-right">
+      <input type="range" id="seek-bar" value="0">
+      <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

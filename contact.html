@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | World Famous</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">World Famous</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h1>Contact Me</h1>
+    <p>Let’s connect! Use the form below to reach out for collaborations, bookings, or inquiries.</p>
+    
+    <form action="https://formspree.io/f/mnnberlp" method="POST" class="contact-form">
+      <label for="name">Your Name</label>
+      <input type="text" name="name" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="5" placeholder="Type your message here..." required></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <h2>Other Ways to Reach Me</h2>
+      <p>Email: <a href="mailto:worldfamous200818@example.com">worldfamous200818@example.com</a></p>
+      <p>Phone: <a href="tel:+2348167829017">+234 816 782 9017</a></p>
+      <p>Follow on Socials: 
+        <a href="#">Instagram</a> | 
+        <a href="#">Twitter</a> | 
+        <a href="#">YouTube</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Sticky Player -->
+  <footer class="music-player">
+    <div class="player-info">
+      <span id="track-title">Select a song to play...</span>
+    </div>
+    <audio id="audio-player" controls></audio>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

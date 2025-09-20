@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Famous | Music</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">World Famous 🎶</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="music.html" class="active">Music</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Music Section -->
+  <section class="music">
+    <h1>🎵 My Music</h1>
+    <div class="album-list">
+      <!-- Album 1 -->
+      <div class="album">
+        <img src="images/cover1.jpg" alt="Album Cover">
+        <h3>Vibe No Dey Finish</h3>
+        <button onclick="playTrack('Vibe No Dey Finish','World Famous','music/vibe.mp3','images/cover1.jpg')">▶️ Play</button>
+      </div>
+
+      <!-- Album 2 -->
+      <div class="album">
+        <img src="images/cover2.jpg" alt="Album Cover">
+        <h3>Far From Home</h3>
+        <button onclick="playTrack('Far From Home','World Famous','music/farfromhome.mp3','images/cover2.jpg')">▶️ Play</button>
+      </div>
+
+      <!-- Album 3 -->
+      <div class="album">
+        <img src="images/cover3.jpg" alt="Album Cover">
+        <h3>Street Anthem</h3>
+        <button onclick="playTrack('Street Anthem','World Famous','music/street.mp3','images/cover3.jpg')">▶️ Play</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 World Famous. All rights reserved.</p>
+  </footer>
+
+  <!-- Sticky Player -->
+  <div class="music-player">
+    <div class="player-left">
+      <img src="images/cover1.jpg" alt="Cover" id="player-cover">
+      <div>
+        <h4 id="player-title">Track Title</h4>
+        <p id="player-artist">Artist</p>
+      </div>
+    </div>
+    <div class="player-controls">
+      <button onclick="prevTrack()">⏮</button>
+      <button onclick="togglePlay()" id="play-btn">▶️</button>
+      <button onclick="nextTrack()">⏭</button>
+    </div>
+    <div class="player-right">
+      <input type="range" id="seek-bar" value="0">
+      <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

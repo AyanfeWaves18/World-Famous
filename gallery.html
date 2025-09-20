@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Famous | Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">World Famous 🎶</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Gallery Section -->
+  <section class="gallery">
+    <h1>📸 Gallery</h1>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/gallery1.jpg" alt="Performance 1"></div>
+      <div class="gallery-item"><img src="images/gallery2.jpg" alt="Performance 2"></div>
+      <div class="gallery-item"><img src="images/gallery3.jpg" alt="Performance 3"></div>
+      <div class="gallery-item"><img src="images/gallery4.jpg" alt="Performance 4"></div>
+      <div class="gallery-item"><img src="images/gallery5.jpg" alt="Performance 5"></div>
+      <div class="gallery-item"><img src="images/gallery6.jpg" alt="Performance 6"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 World Famous. All rights reserved.</p>
+  </footer>
+
+  <!-- Sticky Player -->
+  <div class="music-player">
+    <div class="player-left">
+      <img src="images/cover1.jpg" alt="Cover" id="player-cover">
+      <div>
+        <h4 id="player-title">Track Title</h4>
+        <p id="player-artist">Artist</p>
+      </div>
+    </div>
+    <div class="player-controls">
+      <button onclick="prevTrack()">⏮</button>
+      <button onclick="togglePlay()" id="play-btn">▶️</button>
+      <button onclick="nextTrack()">⏭</button>
+    </div>
+    <div class="player-right">
+      <input type="range" id="seek-bar" value="0">
+      <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
