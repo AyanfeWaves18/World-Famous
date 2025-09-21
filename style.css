@@ -209,8 +209,12 @@ h1 {
   width: 120px;
 }
 
+/* Footer */
 footer {
-  margin-bottom: 40x; /* adjust this to match the height of your sticky player */
+  text-align: center;
+  padding: 1rem;
+  background: #111;
+  color: #aaa;
 }
 
 /* Responsive */

@@ -1,73 +1,57 @@
-// Global audio player
-let audio = new Audio();
+// =========================
+// Global Variables
+// =========================
 let currentTrack = null;
+let audioElement = null;
 
-// Sticky player elements
-const player = document.createElement("div");
-player.className = "sticky-player";
-player.innerHTML = `
-  <img id="player-cover" src="" alt="Cover">
-  <div class="player-info">
-    <h4 id="player-title">Not Playing</h4>
-    <p id="player-artist"></p>
-  </div>
-  <div class="player-controls">
-    <button id="play-pause">⏯</button>
-    <input type="range" id="seek-bar" value="0" min="0" max="100">
-  </div>
-`;
-document.body.appendChild(player);
-
-// References
-const playPauseBtn = document.getElementById("play-pause");
-const seekBar = document.getElementById("seek-bar");
-const playerTitle = document.getElementById("player-title");
-const playerArtist = document.getElementById("player-artist");
-const playerCover = document.getElementById("player-cover");
-
-// Function to play track
+// =========================
+// Play Track Function
+// =========================
 function playTrack(title, artist, src, cover) {
-  if (currentTrack !== src) {
-    audio.src = src;
-    currentTrack = src;
-    playerTitle.textContent = title;
-    playerArtist.textContent = artist;
-    playerCover.src = cover;
-    audio.play();
-    playPauseBtn.textContent = "⏸";
-  } else {
-    if (audio.paused) {
-      audio.play();
-      playPauseBtn.textContent = "⏸";
-    } else {
-      audio.pause();
-      playPauseBtn.textContent = "▶️";
-    }
+  if (!audioElement) {
+    audioElement = document.getElementById("audio");
   }
+
+  // Update player UI
+  document.getElementById("player-title").textContent = title;
+  document.getElementById("player-artist").textContent = artist;
+  document.getElementById("player-cover").src = cover;
+
+  // Load and play audio
+  audioElement.src = src;
+  audioElement.play();
 }
 
-// Play/pause button
-playPauseBtn.addEventListener("click", () => {
-  if (audio.paused) {
-    audio.play();
-    playPauseBtn.textContent = "⏸";
-  } else {
-    audio.pause();
-    playPauseBtn.textContent = "▶️";
-  }
-});
-
-// Update seek bar as track plays
-audio.addEventListener("timeupdate", () => {
-  if (!isNaN(audio.duration)) {
-    seekBar.value = (audio.currentTime / audio.duration) * 100;
-  }
-});
-
-// Seek when user changes range
-seekBar.addEventListener("input", () => {
-  audio.currentTime = (seekBar.value / 100) * audio.duration;
-});
+// =========================
+// Inject Player ONLY in music.html
+// =========================
+if (window.location.pathname.includes("music.html")) {
+  const playerContainer = document.createElement("div");
+  playerContainer.id = "player-container";
+  playerContainer.innerHTML = `
+    <div id="player" style="
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #111;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+      z-index: 9999;
+    ">
+      <img id="player-cover" src="" alt="Cover" width="50" style="margin-right:10px; border-radius:4px;">
+      <div style="flex:1">
+        <h4 id="player-title" style="margin:0; font-size:16px;">No Track</h4>
+        <p id="player-artist" style="margin:0; font-size:12px; color:#aaa;"></p>
+      </div>
+      <audio id="audio" controls style="max-width:300px;"></audio>
+    </div>
+  `;
+  document.body.appendChild(playerContainer);
+}
 
 // ✅ Optional: Smooth scroll for contact page
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
