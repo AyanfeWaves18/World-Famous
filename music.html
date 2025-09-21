@@ -25,49 +25,47 @@
   <section class="music">
     <h1>🎵 My Music</h1>
     <div class="album-list">
-
       <!-- Album 1 -->
       <div class="album">
         <img src="lust.jpg" alt="Album Cover">
         <h3>Lust ft Zaddy X, Sammy Flex & Evy Clasic</h3>
-        <button onclick="playTrack('Lust ft Zaddy X, Sammy Flex & Evy Clasic','World Famous','lust.m4a','lust.jpg')">▶️ Play</button>
+        <button onclick="playTrack('Lust ft Zaddy X, Sammy Flex & Evy Clasic','World Famous','Lust.m4a','lust.jpg')">▶️ Play</button>
       </div>
 
       <!-- Album 2 -->
       <div class="album">
         <img src="scam.jpg" alt="Album Cover">
         <h3>Scam</h3>
-        <button onclick="playTrack('Scam','World Famous','scam.m4a','scam.jpg')">▶️ Play</button>
+        <button onclick="playTrack('Scam','World Famous','Scam.m4a','scam.jpg')">▶️ Play</button>
       </div>
 
       <!-- Album 3 -->
       <div class="album">
-        <img src="crusher.jpg" alt="Album Cover">
+        <img src="Crusher.jpg" alt="Album Cover">
         <h3>Crusher ft YK General</h3>
-        <button onclick="playTrack('Crusher ft YK General','World Famous','crusher.m4a','crusher.jpg')">▶️ Play</button>
+        <button onclick="playTrack('Crusher ft YK General','World Famous','Crusher ft YK General.m4a','Crusher.jpg')">▶️ Play</button>
       </div>
 
       <!-- Album 4 -->
       <div class="album">
         <img src="ikebe.jpg" alt="Album Cover">
         <h3>Ikebe ft YK General</h3>
-        <button onclick="playTrack('Ikebe ft YK General','World Famous','ikebe.m4a','ikebe.jpg')">▶️ Play</button>
+        <button onclick="playTrack('Ikebe ft YK General','World Famous','IKEBE.m4a','ikebe.jpg')">▶️ Play</button>
       </div>
 
       <!-- Album 5 -->
       <div class="album">
-        <img src="holy-ghost.png" alt="Album Cover">
+        <img src="holy ghost.png" alt="Album Cover">
         <h3>Holy Ghost</h3>
-        <button onclick="playTrack('Holy Ghost','World Famous','holy-ghost.m4a','holy-ghost.png')">▶️ Play</button>
+        <button onclick="playTrack('Holy Ghost','World Famous','Holy Ghost.m4a','holy ghost.png')">▶️ Play</button>
       </div>
 
       <!-- Album 6 -->
       <div class="album">
-        <img src="excess-vibe.jpg" alt="Album Cover">
+        <img src="Excess Vibe.jpg" alt="Album Cover">
         <h3>Excess Vibe ft Zaddy X</h3>
-        <button onclick="playTrack('Excess Vibe ft Zaddy X','World Famous','excess-vibe.m4a','excess-vibe.jpg')">▶️ Play</button>
+        <button onclick="playTrack('Excess Vibe ft Zaddy X','World Famous','Excess Vibe ft Zaddy X.m4a','Excess Vibe.jpg')">▶️ Play</button>
       </div>
-
     </div>
   </section>
 
@@ -75,6 +73,9 @@
   <footer>
     <p>&copy; 2025 World Famous. All rights reserved.</p>
   </footer>
+
+  <!-- ✅ Audio element (hidden, but required for playback) -->
+  <audio id="audioPlayer" controls style="display:none"></audio>
 
   <script src="script.js"></script>
 </body>
