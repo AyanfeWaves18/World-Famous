@@ -4,39 +4,15 @@
 let audioElement = null;
 
 // =========================
-// Play Track Function
-// =========================
-function playTrack(title, artist, src, cover) {
-  // Ensure audio element exists
-  if (!audioElement) {
-    audioElement = document.getElementById("audio");
-  }
-
-  if (audioElement) {
-    // Update player UI
-    document.getElementById("player-title").textContent = title;
-    document.getElementById("player-artist").textContent = artist;
-    document.getElementById("player-cover").src = cover;
-
-    // Load and play audio
-    audioElement.src = src;
-    audioElement.load();   // 👈 important to refresh new track
-    audioElement.play().catch(err => {
-      console.log("Playback failed:", err);
-    });
-  }
-}
-
-// =========================
 // Inject Player ONLY in music.html
 // =========================
 if (window.location.pathname.includes("music.html")) {
   window.addEventListener("DOMContentLoaded", () => {
+    // Create the player container
     const playerContainer = document.createElement("div");
     playerContainer.id = "player-container";
     playerContainer.innerHTML = `
       <div id="player" style="
-        position: relative; /* 👈 removed sticky */
         width: 100%;
         background: #111;
         color: #fff;
@@ -54,11 +30,42 @@ if (window.location.pathname.includes("music.html")) {
         <audio id="audio" controls style="max-width:300px;"></audio>
       </div>
     `;
+
+    // Add player at the bottom of the page
     document.body.appendChild(playerContainer);
 
-    // Initialize audioElement reference
+    // Initialize audio element
     audioElement = document.getElementById("audio");
   });
+}
+
+// =========================
+// Play Track Function
+// =========================
+function playTrack(title, artist, src, cover) {
+  // Check that audio element exists
+  if (!audioElement) {
+    audioElement = document.getElementById("audio");
+  }
+
+  if (audioElement) {
+    // Update UI
+    document.getElementById("player-title").textContent = title;
+    document.getElementById("player-artist").textContent = artist;
+    document.getElementById("player-cover").src = cover;
+
+    // Set source & play
+    audioElement.src = src;
+    audioElement.load();
+    audioElement.play()
+      .then(() => {
+        console.log(`▶️ Now playing: ${title}`);
+      })
+      .catch(err => {
+        console.error("⚠️ Playback failed:", err);
+        alert("Could not play audio. Check file path or browser settings.");
+      });
+  }
 }
 
 // ✅ Optional: Smooth scroll for contact page
