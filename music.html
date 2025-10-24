@@ -21,79 +21,116 @@
     </nav>
   </header>
 
-  <!-- Music Section -->
-  <section class="music">
-    <h1>🎵 My Music</h1>
-    <div class="album-list">
+  <main>
+    <section class="section fade-in">
+      <div class="container">
+        <h1>Music</h1>
+        <center>
 
-      <!-- Album 1 -->
-      <div class="album">
-        <img src="lust.jpg" alt="Album Cover">
-        <h3>
-          <a href="https://dvpper.lnk.to/lust" target="_blank">
-            Lust ft Zaddy X, Sammy Flex & Evy Clasic
-          </a>
-        </h3>
+        <div class="album-grid">
+          <!-- Album card template:
+               - .album-card holds the image and bottom overlay
+               - data-link contains the fanlink used for mobile tap opening (and button/title)
+               - title link and button explicitly open the fanlink in a new tab
+          -->
+
+         <article class="album-card" data-link="https://dvpper.lnk.to/lust">
+            <div class="album-media">
+              <img src="lust.jpg" alt="Scam cover" class="album-img">
+              <div class="overlay-bottom">
+                <div class="overlay-inner">
+                  <div class="play-and-title">
+                    <div class="overlay-title"><p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">LUST FT ZADDY X, SAMMY FLEX & EVY CLASSIC</p></div>
+                  </div>
+                  <a class="stream-btn" href="https://dvpper.lnk.to/lust" target="_blank" rel="noopener">STREAM NOW</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <br>
+
+          <!-- Repeat the album-card for each track, updating images and URLs -->
+          <article class="album-card" data-link="https://dvpper.lnk.to/scam">
+            <div class="album-media">
+              <img src="scam.jpg" alt="Scam cover" class="album-img">
+              <div class="overlay-bottom">
+                <div class="overlay-inner">
+                  <div class="play-and-title">
+                    <div class="overlay-title"><p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">SCAM</p></div>
+                  </div>
+                  <a class="stream-btn" href="https://dvpper.lnk.to/scam" target="_blank" rel="noopener">STREAM NOW</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <br>
+
+          <article class="album-card" data-link="https://dvpper.lnk.to/crusher">
+            <div class="album-media">
+              <img src="crusher.jpg" alt="Crusher cover" class="album-img">
+              <div class="overlay-bottom">
+                <div class="overlay-inner">
+                  <div class="play-and-title">
+                    <div class="overlay-title"><p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Crusher ft YK General</p></div>
+                  </div>
+                  <a class="stream-btn" href="https://dvpper.lnk.to/crusher" target="_blank" rel="noopener">STREAM NOW</a>
+                </div>
+              </div>
+          </article>
+          <br>
+
+          <article class="album-card" data-link="https://dvpper.lnk.to/ikebeworldfamous">
+            <div class="album-media">
+              <img src="ikebe.jpg" alt="Ikebe cover" class="album-img">
+              <div class="overlay-bottom">
+                <div class="overlay-inner">
+                  <div class="play-and-title">
+                    <div class="overlay-title"><p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Ikebe ft YK General</p></div>
+                  </div>
+                  <a class="stream-btn" href="https://dvpper.lnk.to/ikebeworldfamous" target="_blank" rel="noopener">STREAM NOW</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <br>
+
+          <article class="album-card" data-link="https://dvpper.lnk.to/holyghostworldfamous">
+            <div class="album-media">
+              <img src="holy-ghost.png" alt="Holy Ghost cover" class="album-img">
+              <div class="overlay-bottom">
+                <div class="overlay-inner">
+                  <div class="play-and-title">
+                    <div class="overlay-title"><p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Holy Ghost</p></div>
+                  </div>
+                  <a class="stream-btn" href="https://dvpper.lnk.to/holyghostworldfamous" target="_blank" rel="noopener">STREAM NOW</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <br>
+
+          <article class="album-card" data-link="https://dvpper.lnk.to/excessvibe">
+            <div class="album-media">
+              <img src="excess-vibe.jpg" alt="Excess Vibe cover" class="album-img">
+              <div class="overlay-bottom">
+                <div class="overlay-inner">
+                  <div class="play-and-title">
+                    <div class="overlay-title"><p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Excess Vibe ft Zaddy X</p></div>
+                  </div>
+                  <a class="stream-btn" href="https://dvpper.lnk.to/excessvibe" target="_blank" rel="noopener">STREAM NOW</a>
+                </div>
+              </div>
+          </article>
+        </div>
       </div>
+    </section>
+  </main>
+  </center>
 
-      <!-- Album 2 -->
-      <div class="album">
-        <img src="scam.jpg" alt="Album Cover">
-        <h3>
-          <a href="https://dvpper.lnk.to/scam" target="_blank">
-            Scam
-          </a>
-        </h3>
-      </div>
-
-      <!-- Album 3 -->
-      <div class="album">
-        <img src="crusher.jpg" alt="Album Cover">
-        <h3>
-          <a href="https://dvpper.lnk.to/crusher" target="_blank">
-            Crusher ft YK General
-          </a>
-        </h3>
-      </div>
-
-      <!-- Album 4 -->
-      <div class="album">
-        <img src="ikebe.jpg" alt="Album Cover">
-        <h3>
-          <a href="https://dvpper.lnk.to/ikebeworldfamous" target="_blank">
-            Ikebe ft YK General
-          </a>
-        </h3>
-      </div>
-
-      <!-- Album 5 -->
-      <div class="album">
-        <img src="holy-ghost.png" alt="Album Cover">
-        <h3>
-          <a href="https://dvpper.lnk.to/holyghostworldfamous" target="_blank">
-            Holy Ghost
-          </a>
-        </h3>
-      </div>
-
-      <!-- Album 6 -->
-      <div class="album">
-        <img src="excess-vibe.jpg" alt="Album Cover">
-        <h3>
-          <a href="https://dvpper.lnk.to/excessvibe" target="_blank">
-            Excess Vibe ft Zaddy X
-          </a>
-        </h3>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Footer -->
+ <!-- Footer -->
   <footer>
     <p>&copy; 2025 World Famous. All rights reserved.</p>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

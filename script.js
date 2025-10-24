@@ -16,18 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // =========================
-  // Mobile menu toggle (hamburger)
-  // =========================
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navMenu = document.querySelector("nav ul");
-
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("open");
-      menuToggle.classList.toggle("active");
-    });
-  }
+  <script>
+    const menu =
+      document.getElementById("mobile-menu");
+      document.getElementById("hamburger").onclick = () {
+        menu.classList.remove("open");
+  </script>
 
   // =========================
   // Fade-in animation on scroll
