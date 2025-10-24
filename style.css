@@ -30,10 +30,11 @@ body {
   letter-spacing: 6px;
 }
 
+/* HAMBURGER   — hidden on desktop */
 .hamburger{
   width: 30px;
   height: 22px;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
@@ -46,6 +47,7 @@ body {
   background: #fff;
 }
 
+/* MOBILE OVERLAY MENU */
 .mobile-menu{
   position: fixed;
   top: 0;
@@ -54,11 +56,24 @@ body {
   height: 100vh;
   background: #fff;
   padding: 60px 30px;
-  transition: .3s ease;
+  transition: .3s ease-in-out;
+  overflow-y: auto;          /* allow scrolling INSIDE menu */
+  z-index: 9999;
 }
 
 .mobile-menu.open{
   left: 0;
+}
+
+/* Freeze page behind when open */
+body.no-scroll{
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mobile-menu ul{
+  list-style:none;
+  margin-top:40px;
 }
 
 .mobile-menu li{
@@ -80,6 +95,13 @@ body {
   right: 25px;
   top: 10px;
   cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 786px){
+  .hamburger{
+    display:flex;
+  }
 }
 
 /* Section Styles */

@@ -50,5 +50,17 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('mobileMenu');
+  const closeBtn = document.getElementById('closeBtn');
+
+  hamburger.onclick = () => menu.classList.add('open');
+  closeBtn.onclick = () => menu.classList.remove('open');
+});
+</script>
+
 </body>
 </html>

@@ -16,12 +16,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  <script>
-    const menu =
-      document.getElementById("mobile-menu");
-      document.getElementById("hamburger").onclick = () {
-        menu.classList.remove("open");
-  </script>
+  // =========================
+  // Mobile Menu Toggle (Hamburger)
+  // =========================
+  const menu = document.getElementById("mobileMenu");
+  const hamburger = document.getElementById("hamburger");
+  const closeBtn = document.getElementById("closeBtn");
+
+  hamburger.addEventListener("click", () => {
+    menu.classList.add("open");
+    document.body.classList.add("no-scroll");   // freeze background
+  });
+
+  closeBtn.addEventListener("click", () => {
+    menu.classList.remove("open");
+    document.body.classList.remove("no-scroll");  // unfreeze background
+  });
 
   // =========================
   // Fade-in animation on scroll
@@ -47,4 +57,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fallback for old browsers (make all visible immediately)
     faders.forEach(fader => fader.classList.add("visible"));
   }
+
 });
