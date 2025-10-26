@@ -3,10 +3,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
   background: linear-gradient(to bottom, #111, #222);
   color: white;
   line-height: 1.6;
@@ -15,8 +15,7 @@ body {
   flex-direction: column;
 }
 
-*{margin:0;padding:0;box-sizing: border-box;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
-
+/* ===== NAVBAR ===== */
 .nav{
   display:flex;
   justify-content: space-between;
@@ -28,9 +27,24 @@ body {
 
 .logo{
   letter-spacing: 6px;
+  color: orange;
 }
 
-/* HAMBURGER   — hidden on desktop */
+/* DESKTOP MENU — visible only on desktop */
+.desktop-menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.desktop-menu a {
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+/* HAMBURGER — hidden on desktop */
 .hamburger{
   width: 30px;
   height: 22px;
@@ -57,18 +71,12 @@ body {
   background: #fff;
   padding: 60px 30px;
   transition: .3s ease-in-out;
-  overflow-y: auto;          /* allow scrolling INSIDE menu */
+  overflow-y: auto;
   z-index: 9999;
 }
 
 .mobile-menu.open{
   left: 0;
-}
-
-/* Freeze page behind when open */
-body.no-scroll{
-  height: 100vh;
-  overflow: hidden;
 }
 
 .mobile-menu ul{
@@ -97,66 +105,10 @@ body.no-scroll{
   cursor: pointer;
 }
 
-/* RESPONSIVE */
-@media (max-width: 786px){
-  .hamburger{
-    display:flex;
-  }
-}
-
-/* Section Styles */
-section {
-  padding: 3rem 2rem;
-  flex: 1;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #ff9800;
-}
-
-/* Music Albums */
-.album-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  justify-content: center;
-}
-
-.album {
-  background: #1a1a1a;
-  padding: 1rem;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.album img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.album:hover {
-  transform: translateY(-5px);
-}
-
-.album h3 {
-  margin: 1rem 0;
-}
-
-.album button {
-  background: #ff5722;
-  color: white;
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.album button:hover {
-  background: #e64a19;
+/* Freeze page when menu open */
+body.no-scroll{
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* Gallery Grid */
@@ -176,112 +128,89 @@ h1 {
   transform: scale(1.05);
 }
 
-/* Contact Form */
-.contact-form {
-  max-width: 600px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+/* ===== RESPONSIVE ===== */
+@media (max-width: 786px){
+  .hamburger{ display:flex; }
+  .desktop-menu{ display:none; }
 }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 0.8rem;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-}
-
-.contact-form button {
-  padding: 0.8rem;
-  background: #ff9800;
-  color: black;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background: #ffa733;
-}
-
-/* Social Links */
-.social-links {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.social-links a {
-  color: #ff9800;
-  text-decoration: none;
-  margin: 0 0.5rem;
-}
-
-/* Sticky Music Player */
-.sticky-player {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: linear-gradient(90deg, #ff6a00, #ee0979);
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  box-shadow: 0 -3px 8px rgba(0,0,0,0.2);
-  z-index: 9999;
-  color: white;
-}
-
-.sticky-player img {
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
-  margin-right: 10px;
-}
-
-.sticky-player .player-info {
+/* ===== Sections ===== */
+section {
+  padding: 3rem 2rem;
   flex: 1;
 }
 
-.sticky-player h4, .sticky-player p {
-  margin: 0;
-  font-size: 14px;
+h1 {
+  text-align: left;
 }
 
-.sticky-player .player-controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* CONTACT SECTION WRAP */
+.contact-section{
+  width:90%;
+  max-width:900px;
+  margin:100px auto; /* center with space from navbar */
+  color:white;
 }
 
-#seek-bar {
-  width: 120px;
+.contact-section h1{
+  margin-bottom:25px;
+  font-size:32px;
+  font-weight:700;
+}
+
+/* --- FORM --- */
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  margin-bottom:40px;
+}
+
+.contact-form label{
+  font-size:14px;
+  font-weight:600;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:10px;
+  border:none;
+  outline:none;
+  border-radius:4px;
+  font-size:14px;
+  width:100%;
+}
+
+.contact-form .btn{
+  padding:12px 20px;
+  background:white;
+  color:black;
+  border:none;
+  border-radius:4px;
+  font-weight:700;
+  cursor:pointer;
+  width:max-content;
+}
+
+/* --- OTHER INFO --- */
+.contact-info h2{
+  margin-bottom:10px;
+  font-size:20px;
+  font-weight:700;
+}
+
+.contact-info p a{
+  color:blue;
+  text-decoration:underline;
+}
+
+.contact-info p{
+  margin-bottom:8px;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 20px;
   background: #111;
-  color: #aaa;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    background: #000;
-    top: 70px;
-    right: 0;
-    width: 200px;
-    display: none;
-  }
-
-  .nav-links.active {
-    display: block;
-  }
 }

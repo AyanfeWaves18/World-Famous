@@ -8,40 +8,66 @@
 </head>
 <body>
 <nav class="nav">
-  <div class="logo">World Famous 🎶</div>
 
-  <!-- Hamburger -->
-   <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
+  <div class="logo"><h2>WORLD FAMOUS 🎶</h2></div>
+
+  <!-- DESKTOP MENU -->
+  <ul class="desktop-menu">
+  <li><a href="index.html">HOME</a></li>
+  <li><a href="about.html">ABOUT</a></li>
+  <li><a href="music.html">MUSIC</a></li>
+  <li><a href="gallery.html">GALLERY</a></li>
+  <li><a href="contact.html">CONTACT</a></li>
+  </ul>
+
+  <!-- HAMBURGER (MOBILE ONLY) -->
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
   </div>
+
 </nav>
 
-<!-- Sidebar Menu -->
- <div class="mobile-menu" id="mobileMenu">
-  <button class="close"
-  id="closeBtn">&times;</button>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="music.html">Music</a></li>
-    <li><a href="gallery.html" class="active">Gallery</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
- </div>
+<!-- MOBILE OVERLAY MENU -->
+<ul class="mobile-menu" id="mobileMenu">
+  <button id="closeBtn" class="close">&times;</button>
+  <li><a href="index.html">HOME</a></li>
+  <li><a href="about.html">ABOUT</a></li>
+  <li><a href="music.html">MUSIC</a></li>
+  <li><a href="gallery.html">GALLERY</a></li>
+  <li><a href="contact.html">CONTACT</a></li>
+</ul>
 
   <!-- Gallery Section -->
   <section class="gallery">
     <h1>📸 Gallery</h1>
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="Profile pics.jpg" alt="IMG_20130512"></div>
-      <div class="gallery-item"><img src="IMG_20130412.jpg" alt="IMG_20130412 2"></div>
-      <div class="gallery-item"><img src="IMG_20130304.jpg" alt="IMG_20130304"></div>
-      <div class="gallery-item"><img src="IMG_20130116.jpg" alt="IMG_20130116"></div>
-      <div class="gallery-item"><img src="IMG_20130040.jpg" alt="IMG_20130040"></div>
-      <div class="gallery-item"><img src="IMG_20130053.jpg" alt="IMG_20130053"></div>
-    </div>
+
+  <a class="gallery-item" href="Profile pics.jpg" target="_blank">
+    <img src="Profile pics.jpg" alt="IMG_20130512">
+  </a>
+
+  <a class="gallery-item" href="IMG_20130412.jpg" target="_blank">
+    <img src="IMG_20130412.jpg" alt="IMG_20130412 2">
+  </a>
+
+  <a class="gallery-item" href="IMG_20130304.jpg" target="_blank">
+    <img src="IMG_20130304.jpg" alt="IMG_20130304">
+  </a>
+
+  <a class="gallery-item" href="IMG_20130116.jpg" target="_blank">
+    <img src="IMG_20130116.jpg" alt="IMG_20130116">
+  </a>
+
+  <a class="gallery-item" href="IMG_20130040.jpg" target="_blank">
+    <img src="IMG_20130040.jpg" alt="IMG_20130040">
+  </a>
+
+  <a class="gallery-item" href="IMG_20130053.jpg" target="_blank">
+    <img src="IMG_20130053.jpg" alt="IMG_20130053">
+  </a>
+
+</div>
+
   </section>
 
   <!-- Footer -->
@@ -50,16 +76,6 @@
   </footer>
 
   <script src="script.js"></script>
-
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById('hamburger');
-  const menu = document.getElementById('mobileMenu');
-  const closeBtn = document.getElementById('closeBtn');
-
-  hamburger.onclick = () => menu.classList.add('open');
-  closeBtn.onclick = () => menu.classList.remove('open');
-});
 </script>
 
 </body>
