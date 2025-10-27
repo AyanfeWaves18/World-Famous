@@ -148,7 +148,7 @@ h1 {
 .contact-section{
   width:90%;
   max-width:900px;
-  margin:100px auto; /* center with space from navbar */
+  margin:100px auto;
   color:white;
 }
 
@@ -215,8 +215,11 @@ footer {
   background: #111;
 }
 
+/* === DESKTOP CENTER ONLY FOR INDEX / ABOUT / MUSIC === */
 @media (min-width: 1024px) {
-  section:not(.gallery):not(.contact-section) {
+  body.index-page section,
+  body.about-page section,
+  body.music-page section {
     display: flex;
     flex-direction: column;
     align-items: center;
