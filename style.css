@@ -16,8 +16,8 @@ body {
 }
 
 /* ===== NAVBAR ===== */
-.nav{
-  display:flex;
+.nav {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
@@ -25,7 +25,7 @@ body {
   color: #fff;
 }
 
-.logo{
+.logo {
   letter-spacing: 6px;
   color: orange;
 }
@@ -45,7 +45,7 @@ body {
 }
 
 /* HAMBURGER — hidden on desktop */
-.hamburger{
+.hamburger {
   width: 30px;
   height: 22px;
   display: none;
@@ -54,7 +54,7 @@ body {
   cursor: pointer;
 }
 
-.hamburger span{
+.hamburger span {
   display: block;
   height: 3px;
   width: 100%;
@@ -62,7 +62,7 @@ body {
 }
 
 /* MOBILE OVERLAY MENU */
-.mobile-menu{
+.mobile-menu {
   position: fixed;
   top: 0;
   left: -100%;
@@ -75,27 +75,27 @@ body {
   z-index: 9999;
 }
 
-.mobile-menu.open{
+.mobile-menu.open {
   left: 0;
 }
 
-.mobile-menu ul{
-  list-style:none;
-  margin-top:40px;
+.mobile-menu ul {
+  list-style: none;
+  margin-top: 40px;
 }
 
-.mobile-menu li{
+.mobile-menu li {
   margin: 20px 0;
 }
 
-.mobile-menu a{
+.mobile-menu a {
   text-decoration: none;
   font-size: 22px;
   color: #000;
   letter-spacing: 3px;
 }
 
-.close{
+.close {
   background: none;
   border: none;
   font-size: 40px;
@@ -106,12 +106,12 @@ body {
 }
 
 /* Freeze page when menu open */
-body.no-scroll{
+body.no-scroll {
   height: 100vh;
   overflow: hidden;
 }
 
-/* Gallery Grid */
+/* ===== GALLERY GRID ===== */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -129,12 +129,20 @@ body.no-scroll{
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 786px){
-  .hamburger{ display:flex; }
-  .desktop-menu{ display:none; }
+@media (max-width: 786px) {
+  .hamburger { display: flex; }
+  .desktop-menu { display: none; }
+
+  /* Reset section alignment for mobile */
+  body.index-page section,
+  body.about-page section,
+  body.music-page section {
+    display: block !important;
+    text-align: left !important;
+  }
 }
 
-/* ===== Sections ===== */
+/* ===== SECTIONS ===== */
 section {
   padding: 3rem 2rem;
   flex: 1;
@@ -144,78 +152,78 @@ h1 {
   text-align: left;
 }
 
-/* CONTACT SECTION WRAP */
-.contact-section{
-  width:90%;
-  max-width:900px;
-  margin:100px auto;
-  color:white;
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+  width: 90%;
+  max-width: 900px;
+  margin: 100px auto;
+  color: white;
 }
 
-.contact-section h1{
-  margin-bottom:25px;
-  font-size:32px;
-  font-weight:700;
+.contact-section h1 {
+  margin-bottom: 25px;
+  font-size: 32px;
+  font-weight: 700;
 }
 
 /* --- FORM --- */
-.contact-form{
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  margin-bottom:40px;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
 }
 
-.contact-form label{
-  font-size:14px;
-  font-weight:600;
+.contact-form label {
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .contact-form input,
-.contact-form textarea{
-  padding:10px;
-  border:none;
-  outline:none;
-  border-radius:4px;
-  font-size:14px;
-  width:100%;
+.contact-form textarea {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
 }
 
-.contact-form .btn{
-  padding:12px 20px;
-  background:white;
-  color:black;
-  border:none;
-  border-radius:4px;
-  font-weight:700;
-  cursor:pointer;
-  width:max-content;
+.contact-form .btn {
+  padding: 12px 20px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  width: max-content;
 }
 
 /* --- OTHER INFO --- */
-.contact-info h2{
-  margin-bottom:10px;
-  font-size:20px;
-  font-weight:700;
+.contact-info h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.contact-info p a{
-  color:blue;
-  text-decoration:underline;
+.contact-info p a {
+  color: blue;
+  text-decoration: underline;
 }
 
-.contact-info p{
-  margin-bottom:8px;
+.contact-info p {
+  margin-bottom: 8px;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 20px;
   background: #111;
 }
 
-/* === DESKTOP CENTER ONLY FOR INDEX / ABOUT / MUSIC === */
+/* ===== DESKTOP ONLY CENTERING ===== */
 @media (min-width: 1024px) {
   body.index-page section,
   body.about-page section,
@@ -223,6 +231,14 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
+  }
+
+  /* Make sure gallery and contact remain normal */
+  body.gallery-page section,
+  body.contact-page section {
+    display: block;
+    text-align: left;
   }
 }
