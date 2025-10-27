@@ -128,10 +128,24 @@ body.no-scroll {
   transform: scale(1.05);
 }
 
+/* ===== ALBUM IMAGES (NEW) ===== */
+.album-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 786px) {
   .hamburger { display: flex; }
   .desktop-menu { display: none; }
+
+  /* Reduce album size on mobile */
+  .album-img {
+    max-width: 250px;
+  }
 
   /* Reset section alignment for mobile */
   body.index-body section,
