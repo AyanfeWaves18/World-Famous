@@ -256,3 +256,24 @@ footer {
     text-align: left;
   }
 }
+
+/* --- Make album images perfect square on mobile --- */
+@media (max-width: 786px) {
+
+  .album-media {
+    width: 100%;
+    max-width: 260px;         /* so they don't get too big */
+    aspect-ratio: 1 / 1;      /* this makes it a square */
+    overflow: hidden;
+    margin: 0 auto;           /* center it */
+    border-radius: 8px;
+  }
+
+  .album-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* crop to square */
+    display: block;
+  }
+}
+
