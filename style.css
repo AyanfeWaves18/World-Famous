@@ -134,9 +134,9 @@ body.no-scroll {
   .desktop-menu { display: none; }
 
   /* Reset section alignment for mobile */
-  body.index-page section,
-  body.about-page section,
-  body.music-page section {
+  body.index-body section,
+  body.about-body section,
+  body.music-body section {
     display: block !important;
     text-align: left !important;
   }
@@ -225,9 +225,9 @@ footer {
 
 /* ===== DESKTOP ONLY CENTERING ===== */
 @media (min-width: 1024px) {
-  body.index-page section,
-  body.about-page section,
-  body.music-page section {
+  body.index-body section,
+  body.about-body section,
+  body.music-body section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -236,8 +236,8 @@ footer {
   }
 
   /* Make sure gallery and contact remain normal */
-  body.gallery-page section,
-  body.contact-page section {
+  body.gallery-body section,
+  body.contact-body section {
     display: block;
     text-align: left;
   }
