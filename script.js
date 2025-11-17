@@ -3,6 +3,11 @@
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
 
+  // run only on home.html and about.html
+  const page = window.location.pathname.split("/").pop().toLowerCase();
+  const allowed = ["home.html", "about.html"];
+  if (!allowed.includes(page)) return;
+
   // =========================
   // Smooth scroll for internal links (#anchors)
   // =========================
