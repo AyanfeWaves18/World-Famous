@@ -3,10 +3,6 @@
 // =========================
 document.addEventListener("DOMContentLoaded", () => {
 
-  // run only on home.html and about.html
-  const page = window.location.pathname.split("/").pop().toLowerCase();
-  const allowed = ["home.html", "about.html"];
-  if (!allowed.includes(page)) return;
 
   // =========================
   // Smooth scroll for internal links (#anchors)
@@ -28,15 +24,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
   const closeBtn = document.getElementById("closeBtn");
 
-  hamburger.addEventListener("click", () => {
-    menu.classList.add("open");
-    document.body.classList.add("no-scroll");   // freeze background
-  });
+  // don't assume elements exist — guard to avoid runtime errors
+  if (hamburger && menu) {
+    hamburger.addEventListener("click", () => {
+      menu.classList.add("open");
+      document.body.classList.add("no-scroll");   // freeze background
+    });
+  } else {
+    // optional: console.warn("Hamburger or mobileMenu not found")
+  }
 
-  closeBtn.addEventListener("click", () => {
-    menu.classList.remove("open");
-    document.body.classList.remove("no-scroll");  // unfreeze background
-  });
+  if (closeBtn && menu) {
+    closeBtn.addEventListener("click", () => {
+      menu.classList.remove("open");
+      document.body.classList.remove("no-scroll");  // unfreeze background
+    });
+  }
 
   // =========================
   // Fade-in animation on scroll

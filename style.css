@@ -277,3 +277,104 @@ footer {
   }
 }
 
+/* Center mobile menu when opened on small screens */
+@media (max-width: 768px) {
+  #mobileMenu { display: none; }
+
+  #mobileMenu.open {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+  }
+
+  #mobileMenu.open a {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+}
+
+/* MOBILE CENTERING */
+@media (max-width: 768px) {
+
+  /* INDEX PAGE → Hero Section */
+  .hero-text {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    @media (max-width: 768px) {
+  .hero img,
+  .index-body img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+ 
+  }
+
+  /* ABOUT PAGE → About Section */
+  .about-container {
+    flex-direction: column;          /* Stack image + text vertically */
+    align-items: center;             /* Center them horizontally */
+    text-align: center;              /* Center text inside */
+  }
+
+  .about-container img {
+    max-width: 250px;                /* Optional: keeps it neat */
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .about-text {
+    text-align: center;              /* Center the paragraph */
+    margin-top: 15px;
+  }
+}
+
+/* Center index hero image on mobile */
+@media (max-width: 768px) {
+  .latest-album img {
+    width: 100%;
+    max-width: 320px; /* forces a nice centered mobile size */
+    display: block;
+    margin: 0 auto;   /* centers it */
+    border-radius: 12px;
+  }
+
+  .latest-album .album-card {
+    text-align: center;
+  }
+}
+
+/* Center ABOUT image on mobile */
+@media (max-width: 768px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-container img {
+    width: 100%;
+    max-width: 280px;  /* Perfect size for mobile */
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+}
