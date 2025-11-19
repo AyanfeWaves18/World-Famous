@@ -30,7 +30,7 @@ body {
   color: orange;
 }
 
-/* DESKTOP MENU — visible only on desktop */
+/* DESKTOP MENU */
 .desktop-menu {
   display: flex;
   gap: 30px;
@@ -44,7 +44,7 @@ body {
   font-size: 15px;
 }
 
-/* HAMBURGER — hidden on desktop */
+/* HAMBURGER */
 .hamburger {
   width: 30px;
   height: 22px;
@@ -70,7 +70,7 @@ body {
   height: 100vh;
   background: #fff;
   padding: 60px 30px;
-  transition: .3s ease-in-out;
+  transition: .3s;
   overflow-y: auto;
   z-index: 9999;
 }
@@ -105,10 +105,19 @@ body {
   cursor: pointer;
 }
 
-/* Freeze page when menu open */
+/* Prevent scrolling when nav is open */
 body.no-scroll {
-  height: 100vh;
   overflow: hidden;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 3rem 2rem;
+  flex: 1;
+}
+
+h1 {
+  text-align: left;
 }
 
 /* ===== GALLERY GRID ===== */
@@ -128,7 +137,7 @@ body.no-scroll {
   transform: scale(1.05);
 }
 
-/* ===== ALBUM IMAGES (NEW) ===== */
+/* ALBUM IMAGES */
 .album-img {
   width: 100%;
   height: auto;
@@ -137,108 +146,9 @@ body.no-scroll {
   margin: 0 auto;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 786px) {
-  .hamburger { display: flex; }
-  .desktop-menu { display: none; }
-
-  /* Reduce album size on mobile */
-  .album-img {
-    max-width: 250px;
-  }
-
-  /* Reset section alignment for mobile */
-  body.index-body section,
-  body.about-body section,
-  body.music-body section {
-    display: block !important;
-    text-align: left !important;
-  }
-}
-
-/* ===== SECTIONS ===== */
-section {
-  padding: 3rem 2rem;
-  flex: 1;
-}
-
-h1 {
-  text-align: left;
-}
-
-/* ===== CONTACT SECTION ===== */
-.contact-section {
-  width: 90%;
-  max-width: 900px;
-  margin: 100px auto;
-  color: white;
-}
-
-.contact-section h1 {
-  margin-bottom: 25px;
-  font-size: 32px;
-  font-weight: 700;
-}
-
-/* --- FORM --- */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 40px;
-}
-
-.contact-form label {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 10px;
-  border: none;
-  outline: none;
-  border-radius: 4px;
-  font-size: 14px;
-  width: 100%;
-}
-
-.contact-form .btn {
-  padding: 12px 20px;
-  background: white;
-  color: black;
-  border: none;
-  border-radius: 4px;
-  font-weight: 700;
-  cursor: pointer;
-  width: max-content;
-}
-
-/* --- OTHER INFO --- */
-.contact-info h2 {
-  margin-bottom: 10px;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.contact-info p a {
-  color: blue;
-  text-decoration: underline;
-}
-
-.contact-info p {
-  margin-bottom: 8px;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #111;
-}
-
-/* ===== DESKTOP ONLY CENTERING ===== */
+/* ===== DESKTOP CENTERING ===== */
 @media (min-width: 1024px) {
+
   body.index-body section,
   body.about-body section,
   body.music-body section {
@@ -249,7 +159,6 @@ footer {
     text-align: center;
   }
 
-  /* Make sure gallery and contact remain normal */
   body.gallery-body section,
   body.contact-body section {
     display: block;
@@ -257,124 +166,139 @@ footer {
   }
 }
 
-/* --- Make album images perfect square on mobile --- */
-@media (max-width: 786px) {
+/* ===== MOBILE FIXES ===== */
+@media (max-width: 768px) {
 
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide desktop menu */
+  .desktop-menu {
+    display: none;
+  }
+
+  /* --- CENTER HERO (INDEX) --- */
+  .index-body img,
+  .latest-album img {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  .latest-album,
+  .hero,
+  .index-body section {
+    text-align: center;
+  }
+
+  /* --- ABOUT PAGE CENTERING --- */
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .about-container img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  /* --- ALBUM 1:1 MOBILE --- */
   .album-media {
     width: 100%;
-    max-width: 260px;         /* so they don't get too big */
-    aspect-ratio: 1 / 1;      /* this makes it a square */
+    max-width: 260px;
+    aspect-ratio: 1/1;
     overflow: hidden;
-    margin: 0 auto;           /* center it */
+    margin: 0 auto;
     border-radius: 8px;
   }
 
   .album-media img {
     width: 100%;
     height: 100%;
-    object-fit: cover;        /* crop to square */
-    display: block;
+    object-fit: cover;
   }
 }
 
-/* Center mobile menu when opened on small screens */
+/* ===== FIX CONTACT PAGE LAYOUT (DESKTOP + MOBILE) ===== */
+
+.contact-section {
+  width: 90%;
+  max-width: 600px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center; 
+  width: 100%;
+}
+
+.contact-form label {
+  align-self: flex-start;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.contact-form .btn {
+  padding: 12px 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Center "Other Ways to Reach Me" */
+.contact-info {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.contact-info p {
+  margin-bottom: 8px;
+}
+
+/* MOBILE FIX */
 @media (max-width: 768px) {
-  #mobileMenu { display: none; }
 
-  #mobileMenu.open {
-    display: flex;
-    position: fixed;
-    inset: 0;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem;
-    background: rgba(0,0,0,0.85);
-    z-index: 9999;
-  }
-
-  #mobileMenu.open a {
-    display: block;
-    width: 100%;
-    max-width: 320px;
-    margin: 0.5rem 0;
-    font-size: 1.1rem;
-  }
-}
-
-/* MOBILE CENTERING */
-@media (max-width: 768px) {
-
-  /* INDEX PAGE → Hero Section */
-  .hero-text {
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
-    @media (max-width: 768px) {
-  .hero img,
-  .index-body img {
-    display: block;
-    margin: 0 auto;
-  }
-}
- 
-  }
-
-  /* ABOUT PAGE → About Section */
-  .about-container {
-    flex-direction: column;          /* Stack image + text vertically */
-    align-items: center;             /* Center them horizontally */
-    text-align: center;              /* Center text inside */
-  }
-
-  .about-container img {
-    max-width: 250px;                /* Optional: keeps it neat */
-    width: 100%;
-    border-radius: 10px;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .about-text {
-    text-align: center;              /* Center the paragraph */
-    margin-top: 15px;
-  }
-}
-
-/* Center index hero image on mobile */
-@media (max-width: 768px) {
-  .latest-album img {
-    width: 100%;
-    max-width: 320px; /* forces a nice centered mobile size */
-    display: block;
-    margin: 0 auto;   /* centers it */
-    border-radius: 12px;
-  }
-
-  .latest-album .album-card {
-    text-align: center;
-  }
-}
-
-/* Center ABOUT image on mobile */
-@media (max-width: 768px) {
-  .about-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .contact-section {
+    margin-top: 70px;
     text-align: center;
   }
 
-  .about-container img {
-    width: 100%;
-    max-width: 280px;  /* Perfect size for mobile */
-    border-radius: 12px;
-    display: block;
-    margin: 0 auto;
+  .contact-form label {
+    align-self: center;
   }
 
-  .about-text {
+  .contact-info {
     text-align: center;
   }
 }
